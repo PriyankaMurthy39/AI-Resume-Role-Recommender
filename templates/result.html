@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AI Career Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>{{ result.predicted_role }}</h1>
+        <div class="circle">
+            <span>{{ result.match_percentage }}%</span>
+        </div>
+    </div>
+
+    <!-- SKILLS GRID -->
+    <div class="grid">
+
+        <div class="card">
+            <h3>Matched Skills</h3>
+            <div class="tags">
+                {% for skill in result.matched_skills %}
+                <span class="tag success">{{ skill }}</span>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Skill Gaps</h3>
+            <div class="tags">
+                {% for skill in result.required_skills %}
+                <span class="tag danger">{{ skill }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        {% if result.related_roles %}
+<div class="card full">
+    <h3>Other Suggested Roles</h3>
+    <ul>
+        {% for role in result.related_roles %}
+        <li>
+            {{ role.role }} — {{ role.percentage }}%
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+
+        <div class="card full">
+            <h3>Learning Roadmap</h3>
+            <ul>
+                {% for item in result.youtube_channels %}
+                <li>
+                    <strong>{{ item.skill }}</strong> →
+                    <span class="channel">{{ item.channel }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="card full">
+            <h3>AI Career Insight</h3>
+            <p>{{ result.motivation }}</p>
+        </div>
+
+    </div>
+
+    <div class="actions">
+        <a href="/" class="btn-primary">Re-upload Resume</a>
+    </div>
+
+</div>
+
+</body>
+</html>

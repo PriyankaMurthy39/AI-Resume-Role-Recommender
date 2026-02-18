@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #4f46e5);
+    color: white;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    opacity: 0.7;
+}
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.btn-primary {
+    background: white;
+    color: #4f46e5;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.upload-section {
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.upload-box {
+    display: block;
+    border: 2px dashed #4f46e5;
+    padding: 40px;
+    margin: 20px auto;
+    width: 60%;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-box:hover {
+    background: #eef2ff;
+}
+
+.upload-box input {
+    display: none;
+}
+
+.features {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    color: black;
+    padding: 60px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #0f172a;
+}
